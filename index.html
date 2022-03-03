@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <title>Kelompok 5</title>
+</head>
+
+<body style="background-color: Black;">
+  
+  <nav class="navbar fixed-top " style="background-color: gray; color: white; font-weight: bold; text-align: center;" >
+    <div class="container-fluid col-sm-2" id="count"></div>
+  </nav>
+
+<div class="d-flex justify-content-center mt-5">
+<div class="container " style="background-color: red; width: 900px; border-radius: 10px; color: white; ">
+
+  <div class="container mt-3">
+    <table class="table table-bordered border-5" id="myTable" style="color: white;" >
+        <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Alamat</th>
+          <th>Nomor Telepon</th>
+          <th>Status Hubungan</th>
+        </tr>
+        </thead>
+    </table>
+  </div>
+
+<br>  
+
+<div class="mb-3">
+  <h5>Name</h5>
+  <input type="text" id="input1" class="form-control ">
+</div>
+<div class="mb-3">
+  <h5>Address</h5>
+  <input type="text" id="input2" class="form-control ">
+</div>
+<div class="mb-3">
+  <h5>Number</h5>
+  <input id="input3" type="text" class="form-control ">
+</div>
+<div class="form-floating">
+  <h5>Category</h5>
+  <select id="input4" class="form-select p-3 mb-3" >
+    <option selected></option>
+    <option value="Setia Pada Satu">Setia Pada Satu</option>
+    <option value="Setia Pada Dua">Setia Pada Dua</option>
+    <option value="Setia Pada Tiga">Setia Pada Tiga</option>
+  </select>
+  <button type="submit" id="myButton" class="btn w-100 p-2 mb-3" style="background-color: gray; color: black; ">Submit</button>
+</div>
+</div>
+</div>
+<br><br>
+  <nav class="navbar fixed-bottom " style="background-color: gray; color: white; font-weight: bold; text-align: center;" >
+    <div class="container-fluid col-sm-2" id="footer"></div>
+  </nav>
+
+  <script>
+
+    var value = window.prompt('Who Are You ?');
+     document.getElementById("footer").innerHTML = "Created By : " + value;
+    var x = 0;
+
+    document.getElementById("myButton").onclick = function() {
+
+      var nama = document.getElementById("input1").value;
+      var alamat = document.getElementById("input2").value;
+      var nomor = document.getElementById("input3").value;
+      var kategori = document.getElementById("input4").value;
+
+      var table = document.getElementById("myTable");
+      var NewRow = table.insertRow(table.legth);
+      var cell1 = NewRow.insertCell(0);
+      var cell2 = NewRow.insertCell(1);
+      var cell3 = NewRow.insertCell(2);
+      var cell4 = NewRow.insertCell(3);
+
+      cell1.innerHTML = nama;
+      cell2.innerHTML = alamat;
+      cell3.innerHTML = nomor;
+      cell4.innerHTML = kategori;
+
+      x++;
+      document.getElementById("count").innerHTML = "Total data : " + x;
+      console.log(x);
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+  </script>
+</body>
+</html>
